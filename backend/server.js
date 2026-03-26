@@ -13,7 +13,7 @@ app.use(express.json());
 // Routes
 app.use('/api/contacts', contactRoutes);
 app.use(cors({
-  origin: ["https://your-frontend-vercel-url.vercel.app"],
+  origin: ["https://contact-manager-nine-sage.vercel.app"],
   methods: ["POST", "GET", "PUT", "DELETE"],
   credentials: true
 }));
