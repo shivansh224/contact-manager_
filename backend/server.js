@@ -5,13 +5,18 @@ const cors = require('cors');
 const contactRoutes = require('./routes/contacts');
 
 const app = express();
-
+const cors = require('cors');
 // Middleware
 app.use(cors());
 app.use(express.json());
 
 // Routes
 app.use('/api/contacts', contactRoutes);
+app.use(cors({
+  origin: ["https://your-frontend-vercel-url.vercel.app"],
+  methods: ["POST", "GET", "PUT", "DELETE"],
+  credentials: true
+}));
 
 // Database Connection
 mongoose.connect(process.env.MONGO_URI)
